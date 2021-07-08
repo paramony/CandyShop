@@ -32,6 +32,7 @@ namespace CandyShop
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<ICandyRepository, CandyRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<ShoppingCart>(sc => ShoppingCart.GetCart(sc));
             services.AddHttpContextAccessor();
             services.AddSession();
