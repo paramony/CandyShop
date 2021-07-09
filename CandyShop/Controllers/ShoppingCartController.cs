@@ -49,5 +49,11 @@ namespace CandyShop.Controllers
             }
             return RedirectToAction(nameof(Index));
         }
+
+        public IActionResult ClearCart()
+        {
+            _shoppingCart.ClearCart();
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
